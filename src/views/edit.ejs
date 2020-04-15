@@ -1,0 +1,51 @@
+<% include partials/_header %>
+
+<div class="container">
+  <div class="row">
+    <!--FORM-->
+    <div class="col-md-5 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <form action="/edit/<%= estudiante._id %>" method="post">
+            <div class="form-group">
+              <input class="form-control" type="text" name="NoControl" placeholder="No Control" value="<%= estudiante.NoControl %>">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="Nombre" cols="80"
+                placeholder="Nombre"  placeholder="Nombre" pattern="^[A-ZÑa-zñáéíóúÁÉÍÓÚ]+(\s[A-ZÑa-zñáéíóúÁÉÍÓÚ]+)*$" 
+                data-bv-regexp-message="Formato no valido" required
+                ><%= estudiante.Nombre %></textarea>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="Apellidos" cols="80"
+                placeholder="Apellidos" placeholder="Nombre" pattern="^[A-ZÑa-zñáéíóúÁÉÍÓÚ]+(\s[A-ZÑa-zñáéíóúÁÉÍÓÚ]+)*$" 
+                data-bv-regexp-message="Formato no valido" required
+                ><%= estudiante.Apellidos %></textarea>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="FechaNacim" cols="80"
+                placeholder="Fecha de Nacimiento" required
+                ><%= estudiante.FechaNacim %></textarea>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="Edad" cols="80"
+                placeholder="Edad" required
+                ><%= estudiante.Edad %></textarea>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="CuiNacimiento" cols="80"
+                placeholder="Ciudad de Nacimiento" placeholder="Nombre" pattern="^[A-ZÑa-zñáéíóúÁÉÍÓÚ]+(\s[A-ZÑa-zñáéíóúÁÉÍÓÚ]+)*$" 
+                data-bv-regexp-message="Formato no valido" required
+                ><%= estudiante.CuiNacimiento %></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">
+              Actualizar 
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include partials/_footer%>
